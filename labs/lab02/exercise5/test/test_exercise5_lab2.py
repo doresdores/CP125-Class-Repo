@@ -2,7 +2,7 @@ import pytest
 import sys
 import os
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from exercise5 import is_valid_triangle
+from labs.lab02.exercise5.test.exercise5 import is_valid_triangle
 
 def test_valid_triangle_345():
     # Classic 3-4-5 right triangle

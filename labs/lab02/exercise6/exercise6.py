@@ -15,4 +15,10 @@ def is_leap_year(year):
     """
     # TODO: Implement the leap year logic
     # Hint: Check divisibility in the correct order
-    pass
+    if year % 400 == 0 :
+        return True
+    if year % 100 == 0:
+        return False
+    return year % 4 == 0
+
+
