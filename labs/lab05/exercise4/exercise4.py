@@ -1,9 +1,28 @@
-
+import math
 def filter_query_times(times):
     """
     Remove slow outliers (mean + std deviation) and return sorted times.
     """
-    pass
+    if not times :
+        return[]
+
+    total = 0
+    for i in times:
+        total += i
+    mean = total / len(times)
+
+    total_variance = 0
+    for i in times:
+        total_variance += (i - mean) ** 2
+    variance = total_variance / len(times)
+
+    std_dev = math.sqrt(variance)
+    upper_limit = mean + std_dev
+   
+    filtered_times = []
+    for i in times:
+        if i <= upper_limit:
+            filtered_times.append(i)
 
 
 # Test
