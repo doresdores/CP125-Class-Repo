@@ -1,11 +1,10 @@
-# Storing 5 student scores
-score1 = 85
-score2 = 92
-score3 = 78
-score4 = 88
-score5 = 95
+# A list of coordinates (mutable lists)
+points = (
+    (10, 20),
+    (5, 5),
+    (10, 20) # Duplicate
+)
 
-# To find the average... we need to manually add each one
-total = score1 + score2 + score3 + score4 + score5
-average = total / 5
-print(f"Average score: {average}")
+# Try to remove duplicates using a set
+unique_points = set(points)
+print(unique_points)
