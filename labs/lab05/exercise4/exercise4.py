@@ -4,7 +4,7 @@ def filter_query_times(times):
     Remove slow outliers (mean + std deviation) and return sorted times.
     """
     if len(times) == 0:
-        return 0
+        return []
     
     copy_times = times
 
@@ -17,6 +17,7 @@ def filter_query_times(times):
     for i in copy_times:
         if i > upper_limit:
             times.remove(i)
+    
     
     return sorted(times)
 

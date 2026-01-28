@@ -3,7 +3,7 @@ def clean_sessions(pool, sessions, dead_servers):
     """
     Verify dead servers in pool, remove their sessions, and return sorted list.
     """
-    pass
+    
 
 
 # Test
