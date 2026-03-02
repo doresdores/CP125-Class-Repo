@@ -13,9 +13,12 @@ def filter_passing_scores(input_file, output_file):
         int: count of passing students
     """
     # TODO: Implement this function
-    pass
+    count = 0
+    f= open(input_file, "r")
+    
+    
 
 
 # Test your code here
-result = filter_passing_scores("data/scores.txt", "data/passing.txt")
+result = filter_passing_scores("labs/lab08/data/scores.txt", "labs/lab08/data/passing.txt")
 print(f"Passing students: {result}")
