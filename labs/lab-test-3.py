@@ -1,0 +1,49 @@
+#dorothy dores, C02
+#Create a program with TWO functions that can calculate, display the average height in the dataset and can verify that the new row has been successfully added
+
+#import csv file
+import csv 
+
+#fungtion 1: Calculate and display the average height in the dataset
+def bmi_file(fileName):
+    total = 0
+    count = 0
+
+    f = open( fileName ,'r', newline="")
+    reader = csv.reader(f)
+    print(next(reader))
+
+    for row in reader:
+        print(row)
+        total += float(row[1])
+        count += 1
+    
+    AVG = total / count
+    f.close()
+    return AVG
+
+#fungtion 2: to verify that the new row has been successfully added
+def new_data(fileName) :
+    gender = input('Enter your gender :')
+    height = input('Enter your height :') 
+    weight = input('Enter your weight :')
+    BMI = input('Enter your BMI :')
+
+    f = open(fileName, 'a', newline= '')
+    write = csv.writer(f)
+    write.writerow([gender,height,weight,BMI])
+    f.close()
+
+    print('\nUpdate File:')
+    
+    f = open(fileName ,'r', newline="")
+    reader = csv.reader(f)
+
+    for row in reader:
+        print(row)
+    f.close
+
+average = bmi_file('labs/bmi.csv')
+print('AVERAGE HEIGHT =' , average) 
+new_data('labs/bmi.csv')
+
